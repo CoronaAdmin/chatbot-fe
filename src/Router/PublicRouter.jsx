@@ -1,5 +1,5 @@
 import React from "react";
-import { useRoutes, navigate, useRedirect } from "hookrouter";
+import { useRoutes, navigate } from "hookrouter";
 import PublicNavBar from "../components/Navbars/PublicNavBar";
 import LandingPage from "../components/common/LandingPage";
 import Footer from "../components/common/Footer";

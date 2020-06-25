@@ -1,5 +1,4 @@
 import React from "react";
-import { A } from "hookrouter";
 
 export default function Footer({ signUp }) {
     return (

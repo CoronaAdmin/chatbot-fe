@@ -1,6 +1,5 @@
 import React from "react";
 import "../styles/Loader.css";
-const img = "";
 export const Loading = () => {
     return (
         <div className="flex justify-center items-center p-10">
