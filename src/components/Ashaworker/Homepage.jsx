@@ -18,8 +18,8 @@ export default function Homepage() {
         });
     }, []);
     return (
-        <div className="">
-            <div className="flex bg-red-200 px-2 py-3 flex-col my-20 sm:w-full rounded  lg:w-1/2 md:w-3/4  m-0 m-auto mt-10 ">
+        <div className="my-20">
+            <div className="flex bg-red-200 px-2 py-3 flex-col mt-20 mb-20 sm:w-full rounded  lg:w-1/2 md:w-3/4  m-0 m-auto mt-10 ">
                 <div className="grid grid-cols-3">
                     {item.map((value, index) => {
                         return (

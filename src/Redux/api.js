@@ -10,7 +10,7 @@ export default {
         noAuth: false,
     },
     getSurvey: {
-        path: "/survey",
+        path: "/survey/all",
         method: "GET",
         noAuth: false,
     },

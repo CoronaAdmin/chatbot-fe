@@ -5,12 +5,18 @@ function SurveyForm({ id }) {
         { id: "1", name: "what is name" },
         { id: "2", name: "address" },
         { id: "3", name: "age" },
+        { id: "1", name: "what is name" },
+        { id: "2", name: "address" },
+        { id: "3", name: "age" },
+        { id: "1", name: "what is name" },
+        { id: "2", name: "address" },
+        { id: "3", name: "age" },
     ];
     const handleSubmit = () => {
         alert("submited");
     };
     return (
-        <div className="    m-0 min-h-screen m-auto">
+        <div className="my-5 m-0  m-auto">
             <div className="m-0 text-black text-2xl my-3 font-bold text-center m-auto">
                 Survey about {id}
             </div>
