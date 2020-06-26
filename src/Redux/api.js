@@ -9,5 +9,4 @@ export default {
         method: "GET",
         noAuth: false,
     },
-
 };

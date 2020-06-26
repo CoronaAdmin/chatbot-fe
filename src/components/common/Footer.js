@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Footer({ signUp }) {
     return (
-        <div className="absolute bottom-0 w-full">
+        <div className="bottom-0 w-full">
             <section className="bg-gray-200 py-3 w-full">
                 <div className="container mx-auto px-8">
                     <a
