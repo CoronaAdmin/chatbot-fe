@@ -9,15 +9,15 @@ export default function AshaworkerNavBar() {
     };
     return (
         <nav className="flex items-center justify-between flex-wrap bg-red-500">
-            <A href="/">
+            <A href="/" className="w-2/3">
                 <div className="flex items-center text-white mr-6 py-6 pl-6">
-                    <span className="font-semibold text-xl sm:text-lg ml-1 tracking-tight">
+                    <span className="font-semibold text-md lg:text-xl md:text-xl ml-1 tracking-tight">
                         Welcome AshaWorker
                     </span>
                 </div>
             </A>
             <button
-                className="flex items-center border-4 hover:border-4 hover:border-white  text-red-500 hover:text-white hover:bg-red-500 mr-6 py-2 px-1  font-semibold text-md justify-center md:px-6 rounded bg-white cursor-pointer"
+                className="flex items-center text-sm md:text-lg lg:text-lg border-4 hover:border-4 hover:border-white  text-red-500 hover:text-white hover:bg-red-500 mr-6 py-2 px-1  font-semibold text-md justify-center md:px-6 rounded bg-white cursor-pointer"
                 onClick={logout}>
                 Logout
             </button>

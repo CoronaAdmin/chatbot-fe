@@ -9,8 +9,8 @@ export default function Homepage() {
         { name: "survey 1", id: "1" },
         { name: "survey 2", id: "2" },
         { name: "survey 3", id: "3" },
-        { name: "surbey 4", id: "4" },
-        { name: "surbey 5", id: "5" },
+        { name: "survey 4", id: "4" },
+        { name: "survey 5", id: "5" },
     ];
     useEffect(() => {
         dispatch(getSurvey()).then((res) => {
