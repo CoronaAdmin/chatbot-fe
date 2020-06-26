@@ -9,6 +9,10 @@ export const getCurrentUser = () => {
 export const getSurvey = () => {
     return fireRequest("getSurvey");
 };
-export const postSurvey = () => {
-    return fireRequest("postSurvey");
+export const postSurvey = (id, form) => {
+    console.log(form);
+    return fireRequest("postSurvey", [id], form, "", true);
+};
+export const fetchQuestions = () => {
+    return fireRequest("fetchQuestions");
 };

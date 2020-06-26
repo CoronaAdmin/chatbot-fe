@@ -10,12 +10,17 @@ export default {
         noAuth: false,
     },
     getSurvey: {
-        path: "/survey/all",
+        path: "/api/v1/surveys/fetch_surveys/all",
+        method: "GET",
+        noAuth: false,
+    },
+    fetchQuestions: {
+        path: "/api/v1/questions/fetch_questions/all",
         method: "GET",
         noAuth: false,
     },
     postSurvey: {
-        path: "/survey",
+        path: "/api/v1/response/submit_response",
         method: "POST",
         noAuth: true,
     },
