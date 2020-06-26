@@ -9,4 +9,14 @@ export default {
         method: "GET",
         noAuth: false,
     },
+    getSurvey: {
+        path: "/survey",
+        method: "GET",
+        noAuth: false,
+    },
+    postSurvey: {
+        path: "/survey",
+        method: "POST",
+        noAuth: true,
+    },
 };

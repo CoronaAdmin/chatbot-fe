@@ -6,3 +6,9 @@ export const login = (body) => {
 export const getCurrentUser = () => {
     return fireRequest("currentUser");
 };
+export const getSurvey = () => {
+    return fireRequest("getSurvey");
+};
+export const postSurvey = () => {
+    return fireRequest("postSurvey");
+};

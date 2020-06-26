@@ -10,11 +10,11 @@ function SurveyForm({ id }) {
         alert("submited");
     };
     return (
-        <div className="m-0 min-h-screen m-auto">
+        <div className="    m-0 min-h-screen m-auto">
             <div className="m-0 text-black text-2xl my-3 font-bold text-center m-auto">
                 Survey about {id}
             </div>
-            <form className="max-w-xl  m-0 m-auto p-10 bg-white rounded shadow-xl">
+            <form onSubmit={handleSubmit} className="max-w-xl  m-0 m-auto p-10 bg-white rounded shadow-xl">
                 {item.map((value, index) => {
                     return (
                         <div className="mt-2 mb-2">
@@ -38,7 +38,7 @@ function SurveyForm({ id }) {
                 })}
                 <button
                     class="bg-red-500    hover:bg-red-400 m-0 text-white font-bold py-2 px-4 border-b-4 border-red-700 hover:border-red-500 rounded"
-                    onClick={handleSubmit}>
+                    type="submit">
                     {" "}
                     Submit
                 </button>
