@@ -10,9 +10,11 @@ export const getSurvey = () => {
     return fireRequest("getSurvey");
 };
 export const postSurvey = (id, form) => {
-    console.log(form);
-    return fireRequest("postSurvey", [id], form, "", true);
+    return fireRequest("postSurvey", [id], form);
 };
 export const fetchQuestions = () => {
     return fireRequest("fetchQuestions");
+};
+export const AddnewSurvey = (body) => {
+    return fireRequest("addSurvey", [], body);
 };

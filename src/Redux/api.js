@@ -22,6 +22,11 @@ export default {
     postSurvey: {
         path: "/api/v1/response/submit_response",
         method: "POST",
-        noAuth: true,
+        noAuth: false,
+    },
+    addSurvey: {
+        path: "/api/v1/surveys/add_surveys",
+        method: "POST",
+        noAuth: false,
     },
 };

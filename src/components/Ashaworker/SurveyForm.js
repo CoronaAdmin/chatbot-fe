@@ -19,9 +19,11 @@ function SurveyForm({ id }) {
     const [Form, setForm] = useState({});
     const handleSubmit = (e) => {
         e.preventDefault();
-
+        const result = {
+            response: Form,
+        };
         alert("submited");
-        dispatch(postSurvey(Userid, Form)).then((res) => {
+        dispatch(postSurvey(Userid, result)).then((res) => {
             console.log(res);
         });
     };
