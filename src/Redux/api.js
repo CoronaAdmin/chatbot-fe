@@ -15,7 +15,7 @@ export default {
         noAuth: false,
     },
     fetchQuestions: {
-        path: "/api/v1/questions/fetch_questions/all",
+        path: "/api/v1/questions/fetch_questions",
         method: "GET",
         noAuth: false,
     },
@@ -26,6 +26,11 @@ export default {
     },
     addSurvey: {
         path: "/api/v1/surveys/add_surveys",
+        method: "POST",
+        noAuth: false,
+    },
+    addQuestions: {
+        path: "/api/v1/questions/submit_question",
         method: "POST",
         noAuth: false,
     },
