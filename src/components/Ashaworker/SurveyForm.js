@@ -1,24 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { fetchQuestions } from "../../Redux/actions";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import * as Notify from "../../util/Notifications";
 import { FullLoading, Loading } from "../../components/common/Loader";
 import { postSurvey } from "../../Redux/actions";
-import { setStoreData } from "../../Redux/fireRequest";
 import AddQuestion from "./AddQuestions";
 function SurveyForm({ id }) {
     const dispatch = useDispatch();
     const [Questions, setQuestions] = useState({});
     const [Userid, setUserid] = useState("");
     const [shown, setshown] = useState(false);
-    const [loading, setloading] = useState(false);
     useEffect(() => {
-        setloading(true);
         dispatch(fetchQuestions(id)).then((res) => {
-            console.log(res);
             if (res.status === 200) {
                 setQuestions(res.data.questions);
-                setloading(false);
             }
         });
     }, [dispatch, shown, id]);
@@ -28,17 +23,15 @@ function SurveyForm({ id }) {
         const result = {
             response: Form,
         };
-        if(typeof(Number(Userid)) === "number"){
-        dispatch(postSurvey(Userid, result)).then((res) => {
-            console.log(res);
-            if(res.status===201){
-                Notify.Success({msg:"Submitted"});
-                window.location.reload(false);
-            }
-        });}
-        else{
-            console.log(typeof(Number(Userid)))
-            Notify.Error({msg:"Error in UserID"});
+        if (typeof Number(Userid) === "number") {
+            dispatch(postSurvey(Userid, result)).then((res) => {
+                if (res.status === 201) {
+                    Notify.Success({ msg: "Submitted" });
+                    window.location.reload(false);
+                }
+            });
+        } else {
+            Notify.Error({ msg: "Error in UserID" });
         }
     };
     const toggle = () => {
@@ -94,12 +87,7 @@ function SurveyForm({ id }) {
     } else {
         return (
             <div>
-                <div>
-                {
-                    shown &&
-                    <FullLoading/>
-                }
-                </div>
+                <div>{shown && <FullLoading />}</div>
                 <div
                     className={`${shown ? "hidden" : "block"}my-5 m-0  m-auto`}>
                     <div className="m-0 text-black text-2xl my-3 font-bold text-center m-auto">
