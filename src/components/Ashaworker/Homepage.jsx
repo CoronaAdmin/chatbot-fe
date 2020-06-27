@@ -36,13 +36,13 @@ export default function Homepage() {
                             <button
                                 className="bg-red-600 font-semibold  text-white my-4 w-md mx-1 px-3 lg:mx-3 py-2 lg:text-lg text-center rounded text-md "
                                 onClick={addsurvey}>
-                                <span className="text-xl">+</span>
+                                <span className="lg:text-xl">+</span>
                                 Add New Survey
                             </button>
                             {Res.map((value, index) => {
                                 return (
                                     <A
-                                        className="bg-red-500 hover:bg-red-600 hover:shadow-md font-semibold justify-center text-white my-4 w-md mx-1 px-3 lg:mx-3 py-2 lg:text-lg text-center rounded text-md "
+                                        className="bg-red-500 hover:bg-red-600 hover:shadow-md font-semibold justify-center text-white my-4 w-md mx-1 px-3 lg:mx-3 py-2 lg:text-lg text-center rounded text-sm lg:text-lg"
                                         href={`/ashaworker/form/${value.id}`}
                                         key={index}>
                                         {value.name}
