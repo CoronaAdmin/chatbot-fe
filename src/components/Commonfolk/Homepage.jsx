@@ -3,16 +3,11 @@ import { navigate } from "hookrouter";
 
 export default function Homepage() {
     const logout = () => {
-        localStorage.removeItem(
-            "login_access_token"
-        );
-        localStorage.removeItem(
-            "login_refresh_token"
-        );
+        localStorage.removeItem("login_access_token");
+        localStorage.removeItem("login_refresh_token");
         navigate("/");
         window.location.reload();
-
-    }
+    };
     return (
         <div className="flex flex-col items-center mt-40 mb-40">
             <button
@@ -22,5 +17,4 @@ export default function Homepage() {
             </button>
         </div>
     );
-
 }

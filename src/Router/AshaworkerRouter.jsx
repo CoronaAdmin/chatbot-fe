@@ -3,9 +3,11 @@ import { useRoutes, useRedirect } from "hookrouter";
 import Footer from "../components/common/Footer";
 import AshaworkerNavbar from "../components/Navbars/AshaworkerNavbar";
 import Homepage from "../components/Ashaworker/Homepage";
+import SurveyForm from "../components/Ashaworker/SurveyForm";
 
 const routes = {
     "/ashaworker": () => <Homepage />,
+    "/ashaworker/form/:id": ({ id }) => <SurveyForm id={id} />,
 };
 // const links = [
 //     {
@@ -19,7 +21,7 @@ const AshaworkerRouter = () => {
     const pages = useRoutes(routes);
 
     return (
-        <div className="">
+        <div className="bg-red-100 min-h-screen">
             <AshaworkerNavbar />
             {pages}
             {/* {!pages ? (

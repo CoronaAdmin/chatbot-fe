@@ -9,5 +9,29 @@ export default {
         method: "GET",
         noAuth: false,
     },
-
+    getSurvey: {
+        path: "/api/v1/surveys/fetch_surveys/all",
+        method: "GET",
+        noAuth: false,
+    },
+    fetchQuestions: {
+        path: "/api/v1/questions/fetch_questions",
+        method: "GET",
+        noAuth: false,
+    },
+    postSurvey: {
+        path: "/api/v1/response/submit_response",
+        method: "POST",
+        noAuth: false,
+    },
+    addSurvey: {
+        path: "/api/v1/surveys/add_surveys",
+        method: "POST",
+        noAuth: false,
+    },
+    addQuestions: {
+        path: "/api/v1/questions/submit_question",
+        method: "POST",
+        noAuth: false,
+    },
 };

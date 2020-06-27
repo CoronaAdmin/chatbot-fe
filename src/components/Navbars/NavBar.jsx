@@ -10,9 +10,7 @@ const NavBar = ({ menus, pages }) => {
     console.log(url);
     const [drawer, setDrawer] = useState(false);
 
-    return (
-        <h1>Private Navbar</h1>
-    );
+    return <h1>Private Navbar</h1>;
 };
 
 export default NavBar;

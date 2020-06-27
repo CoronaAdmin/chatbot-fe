@@ -73,12 +73,9 @@ function App() {
         console.log("user:", currentUser.data.data.type);
         if (currentUser.data.data.type === USER_TYPES.COMMON_FOLK.type) {
             return <CommonfolkRouter />;
-        } else if (
-            currentUser.data.data.type === USER_TYPES.ASHA_WORKER.type
-        ) {
+        } else if (currentUser.data.data.type === USER_TYPES.ASHA_WORKER.type) {
             return <AshaworkerRouter />;
-        }
-        else {
+        } else {
             return <PublicRouter />;
         }
     } else {
