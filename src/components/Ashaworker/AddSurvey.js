@@ -14,7 +14,6 @@ export default function AddSurvey({ Shown, toggle }) {
             name: Input,
         };
         dispatch(AddnewSurvey(form)).then((res) => {
-            console.log(res);
             if (res.status === 201) {
                 Notficiation.Success({ msg: "Survey Created" });
             }

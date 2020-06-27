@@ -14,7 +14,6 @@ export default function AddQuestions({ Shown, toggle, id }) {
             ques: Input,
         };
         dispatch(postQuestions(id, form)).then((res) => {
-            console.log(res);
             if (res.status === 201) {
                 Notficiation.Success({ msg: "Question Added" });
             }
