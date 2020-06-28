@@ -35,5 +35,4 @@ const CommonfolkRouter = () => {
         </>
     );
 };
-
 export default CommonfolkRouter;

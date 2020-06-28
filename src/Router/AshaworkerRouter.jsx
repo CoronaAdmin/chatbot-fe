@@ -22,7 +22,7 @@ const AshaworkerRouter = () => {
 
     return (
         <>
-        <div className="bg-red-100 min-h-screen">
+        <div className="min-h-screen">
             <AshaworkerNavbar />
             {pages}
             {/* {!pages ? (
