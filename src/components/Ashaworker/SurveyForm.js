@@ -10,7 +10,9 @@ function SurveyForm({ id }) {
     const [Questions, setQuestions] = useState({});
     const [Userid, setUserid] = useState("");
     const [shown, setshown] = useState(false);
+    const [Iderr, setIderr] = useState(false);
     useEffect(() => {
+        window.scrollTo(0, 0);
         dispatch(fetchQuestions(id)).then((res) => {
             if (res.status === 200) {
                 setQuestions(res.data.questions);
@@ -23,7 +25,14 @@ function SurveyForm({ id }) {
         const result = {
             response: Form,
         };
-        if (typeof Number(Userid) === "number") {
+        var space = 1;
+        for (let i = 0; i < Userid.length; i++) {
+            if (Userid[i] !== " ") {
+                space = 0;
+                break;
+            }
+        }
+        if (isNaN(Userid) === false && Userid !== "" && space == 0) {
             dispatch(postSurvey(Userid, result)).then((res) => {
                 if (res.status === 201) {
                     Notify.Success({ msg: "Submitted" });
@@ -32,15 +41,13 @@ function SurveyForm({ id }) {
             });
         } else {
             Notify.Error({ msg: "Error in UserID" });
+            setIderr(true);
         }
     };
     const toggle = () => {
         setshown(!shown);
     };
 
-    if (Questions.length === undefined) {
-        return <FullLoading />;
-    }
     const handleChange = (e) => {
         const { value, name } = e.target;
         const fieldValue = { ...Form };
@@ -51,7 +58,9 @@ function SurveyForm({ id }) {
 
         setForm(fieldValue);
     };
-    if (Questions.length === 0) {
+    if (Questions.length === undefined) {
+        return <FullLoading />;
+    } else if (Questions.length === 0) {
         return (
             <div>
                 <div
@@ -82,15 +91,14 @@ function SurveyForm({ id }) {
                 </div>
             </div>
         );
-    } else if (Questions.length === undefined) {
-        return <Loading />;
     } else {
         return (
             <div>
-                <div>{shown && <FullLoading />}</div>
                 <div
-                    className={`${shown ? "hidden" : "block"}my-5 m-0  m-auto`}>
-                    <div className="m-0 text-black text-2xl my-3 font-bold text-center m-auto">
+                    className={`${
+                        shown ? "hidden" : "block"
+                    } my-5 m-0  m-auto`}>
+                    <div className="m-0 text-black text-lg lg:text-2xl my-3 font-bold text-center m-auto">
                         Survey about {id}
                     </div>
                     <div className="max-w-xl  m-0 m-auto p-10 bg-white rounded shadow-xl">
@@ -116,15 +124,18 @@ function SurveyForm({ id }) {
                         </div>
                         <div className="mt-2 mb-2">
                             <label
-                                className="block text-lg text-black "
+                                className="block text-md lg:text-lg text-black "
                                 htmlFor="name">
                                 Enter your user id
                             </label>
                             <input
-                                className="w-full focus:shadow-outline px-5 py-1 text-gray-700 bg-gray-200 rounded"
+                                className={`${
+                                    Iderr ? "border border-red-500" : ""
+                                } w-full focus:shadow-outline px-5 py-1 text-gray-700 bg-gray-200 rounded`}
                                 name="userid"
                                 onChange={(e) => {
                                     setUserid(e.target.value);
+                                    setIderr(false);
                                 }}
                                 type="text"
                                 value={Userid}
@@ -136,7 +147,7 @@ function SurveyForm({ id }) {
                             return (
                                 <div className="mt-2 mb-2" key={index}>
                                     <label
-                                        className="block text-lg text-black "
+                                        className="block text-md lg:text-lg text-black "
                                         htmlFor="name">
                                         {value.ques}
                                     </label>

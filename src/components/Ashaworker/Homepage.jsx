@@ -10,6 +10,7 @@ export default function Homepage() {
     const [shown, setshown] = useState(false);
 
     useEffect(() => {
+        window.scrollTo(0, 0);
         dispatch(getSurvey()).then((res) => {
             setRes(res.data.surveys);
         });
