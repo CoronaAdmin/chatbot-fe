@@ -2,18 +2,22 @@ import React, { useState } from "react";
 import { AddnewSurvey } from "../../Redux/actions";
 import { useDispatch } from "react-redux";
 import * as Notficiation from "../../util/Notifications";
+import { FullLoading } from "../../components/common/Loader";
+
 export default function AddSurvey({ Shown, toggle }) {
     function back() {
         toggle(Shown);
     }
     const [Input, setInput] = useState("");
     const dispatch = useDispatch();
+    const [loading, setloading] = useState(false);
     const empty = (input) => {
         if (typeof input === "undefined" || input === null) return true;
 
         return input.replace(/\s/g, "").length < 1;
     };
     const handleSubmit = () => {
+        setloading(true);
         const form = {
             name: Input,
         };
@@ -23,6 +27,7 @@ export default function AddSurvey({ Shown, toggle }) {
                     Notficiation.Success({ msg: "Survey Created" });
                 }
                 setInput("");
+                setloading(false);
                 back();
             });
         } else {
@@ -34,7 +39,11 @@ export default function AddSurvey({ Shown, toggle }) {
             className={`${
                 !Shown ? "flex" : "hidden"
             } fixed top-0 left-0 bg-red-100 h-screen w-full items-center justify-center z-10`}>
-            <div className="pb-8 px-0 md:w-1/2 lg:w-1/3 bg-white shadow-lg mx-5 rounded">
+            {loading && <FullLoading msg={"Added new Survey...."} />}
+            <div
+                className={`${
+                    loading ? "hidden" : "block"
+                } pb-8 px-0 md:w-1/2 lg:w-1/3 bg-white shadow-lg mx-5 rounded `}>
                 <div className="uppercase bg-red-700 pt-3 px-5 pb-2 text-lg text-white font-bold tracking-wide rounded-t">
                     Enter Name of Survey
                 </div>

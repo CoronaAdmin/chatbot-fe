@@ -21,3 +21,9 @@ export const fetchQuestions = (id) => {
 export const AddnewSurvey = (body) => {
     return fireRequest("addSurvey", [], body);
 };
+export const removeSurvey = (id) => {
+    return fireRequest("deleteSurvey", [id]);
+};
+export const removeQuestion = (id) => {
+    return fireRequest("deleteQuestions", [id]);
+};
