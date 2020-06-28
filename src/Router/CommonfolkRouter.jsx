@@ -19,6 +19,7 @@ const CommonfolkRouter = () => {
     const pages = useRoutes(routes);
 
     return (
+        <>
         <div className="">
             <CommonfolkNavbar />
             {pages}
@@ -29,8 +30,9 @@ const CommonfolkRouter = () => {
             ) : (
                     <AshaworkerNavbar pages={pages} menus={links} />
                 )} */}
-            <Footer />
         </div>
+        <Footer />
+        </>
     );
 };
 

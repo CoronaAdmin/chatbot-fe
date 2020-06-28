@@ -11,6 +11,7 @@ const PublicRouter = () => {
     const pages = useRoutes(routes);
     !pages && navigate("/");
     return (
+        <>
         <div className="relative bg-white min-h-screen pb-24">
             {/* public navbar can go here */}
             <PublicNavBar />
@@ -20,8 +21,9 @@ const PublicRouter = () => {
                     Error 404: Page not found
                 </div>
             )}
-            <Footer />
         </div>
+        <Footer />
+        </>
     );
 };
 
