@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { fetchQuestions } from "../../Redux/actions";
 import { useDispatch } from "react-redux";
 import * as Notify from "../../util/Notifications";
-import { FullLoading, Loading } from "../../components/common/Loader";
+import { FullLoading } from "../../components/common/Loader";
 import { postSurvey } from "../../Redux/actions";
 import AddQuestion from "./AddQuestions";
 function SurveyForm({ id }) {
@@ -19,20 +19,19 @@ function SurveyForm({ id }) {
             }
         });
     }, [dispatch, shown, id]);
+    const empty = (input) => {
+        if (typeof input === "undefined" || input === null) return true;
+
+        return input.replace(/\s/g, "").length < 1;
+    };
     const [Form, setForm] = useState({});
     const handleSubmit = (e) => {
         e.preventDefault();
         const result = {
             response: Form,
         };
-        var space = 1;
-        for (let i = 0; i < Userid.length; i++) {
-            if (Userid[i] !== " ") {
-                space = 0;
-                break;
-            }
-        }
-        if (isNaN(Userid) === false && Userid !== "" && space == 0) {
+
+        if (isNaN(Userid) === false && empty(Userid) === false) {
             dispatch(postSurvey(Userid, result)).then((res) => {
                 if (res.status === 201) {
                     Notify.Success({ msg: "Submitted" });
@@ -75,7 +74,6 @@ function SurveyForm({ id }) {
                         className="p-0 w-12 h-12 bg-red-600 rounded-full hover:bg-red-700 active:shadow-lg mouse shadow transition ease-in duration-200 focus:outline-none">
                         <svg
                             viewBox="0 0 20 20"
-                            enable-background="new 0 0 20 20"
                             className="w-6 h-6 inline-block">
                             <path
                                 fill="#FFFFFF"
@@ -111,7 +109,6 @@ function SurveyForm({ id }) {
                                 className="p-0 w-10 right-0 h-10 bg-red-600 rounded-full hover:bg-red-700 active:shadow-lg mouse shadow transition ease-in duration-200 focus:outline-none">
                                 <svg
                                     viewBox="0 0 20 20"
-                                    enable-background="new 0 0 20 20"
                                     className="w-6 h-6 inline-block">
                                     <path
                                         fill="#FFFFFF"

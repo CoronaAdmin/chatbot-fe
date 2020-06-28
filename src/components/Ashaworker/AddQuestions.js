@@ -8,17 +8,25 @@ export default function AddQuestions({ Shown, toggle, id }) {
     }
     const [Input, setInput] = useState("");
     const dispatch = useDispatch();
+    const empty = (input) => {
+        if (typeof input === "undefined" || input === null) return true;
 
+        return input.replace(/\s/g, "").length < 1;
+    };
     const handleSubmit = () => {
         const form = {
             ques: Input,
         };
-        dispatch(postQuestions(id, form)).then((res) => {
-            if (res.status === 201) {
-                Notficiation.Success({ msg: "Question Added" });
-            }
-            setInput("");
-        });
+        if (empty(Input) === false) {
+            dispatch(postQuestions(id, form)).then((res) => {
+                if (res.status === 201) {
+                    Notficiation.Success({ msg: "Question Added" });
+                }
+                setInput("");
+            });
+        } else {
+            Notficiation.Error({ msg: "Empty Input" });
+        }
     };
     return (
         <div
