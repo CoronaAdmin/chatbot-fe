@@ -11,7 +11,7 @@ export const Loading = () => {
     );
 };
 
-export const FullLoading = ({ color = "gray-200" }) => {
+export const FullLoading = ({ color = "red-100" }) => {
     return (
         <div
             className={`h-screen w-full items-center flex flex-col justify-center overflow-hidden bg-${color}`}>
