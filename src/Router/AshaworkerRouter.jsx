@@ -21,7 +21,8 @@ const AshaworkerRouter = () => {
     const pages = useRoutes(routes);
 
     return (
-        <div className="bg-red-100 min-h-screen">
+        <>
+        <div className="min-h-screen">
             <AshaworkerNavbar />
             {pages}
             {/* {!pages ? (
@@ -31,8 +32,9 @@ const AshaworkerRouter = () => {
             ) : (
                     <AshaworkerNavbar pages={pages} menus={links} />
                 )} */}
-            <Footer />
         </div>
+        <Footer />
+        </>
     );
 };
 
