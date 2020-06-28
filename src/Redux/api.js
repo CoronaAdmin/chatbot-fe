@@ -29,9 +29,19 @@ export default {
         method: "POST",
         noAuth: false,
     },
+    deleteSurvey: {
+        path: "/api/v1/surveys/delete_survey",
+        method: "DELETE",
+        noAuth: false,
+    },
     addQuestions: {
         path: "/api/v1/questions/submit_question",
         method: "POST",
+        noAuth: false,
+    },
+    deleteQuestions: {
+        path: "/api/v1/questions/delete_question",
+        method: "DELETE",
         noAuth: false,
     },
 };

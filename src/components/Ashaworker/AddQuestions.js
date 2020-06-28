@@ -2,18 +2,23 @@ import React, { useState } from "react";
 import { postQuestions } from "../../Redux/actions";
 import { useDispatch } from "react-redux";
 import * as Notficiation from "../../util/Notifications";
+import { FullLoading } from "../../components/common/Loader";
+
 export default function AddQuestions({ Shown, toggle, id }) {
     function back() {
         toggle(Shown);
     }
     const [Input, setInput] = useState("");
     const dispatch = useDispatch();
+    const [Loading, setLoading] = useState(false);
+
     const empty = (input) => {
         if (typeof input === "undefined" || input === null) return true;
 
         return input.replace(/\s/g, "").length < 1;
     };
     const handleSubmit = () => {
+        setLoading(true);
         const form = {
             ques: Input,
         };
@@ -23,17 +28,25 @@ export default function AddQuestions({ Shown, toggle, id }) {
                     Notficiation.Success({ msg: "Question Added" });
                 }
                 setInput("");
+                setLoading(false);
             });
         } else {
             Notficiation.Error({ msg: "Empty Input" });
         }
     };
+    console.log(Loading);
+
     return (
         <div
             className={`${
                 !Shown ? "flex" : "hidden"
-            } fixed top-0 left-0 bg-red-100 h-screen w-full items-center justify-center z-10`}>
-            <div className="pb-8 px-0 md:w-1/2 lg:w-1/2 bg-white shadow-lg mx-5 rounded">
+            } fixed top-0 left-0 bg-red-100 h-screen w-full items-center  justify-center z-10`}>
+            {Loading && <FullLoading msg={"Adding Question...."} />}
+
+            <div
+                className={` ${
+                    Loading ? "hidden" : "block"
+                } pb-8 px-0 md:w-1/2 lg:w-1/2 bg-white  shadow-lg mx-5 rounded`}>
                 <div className="uppercase bg-red-700 pt-3 px-5 pb-2 text-lg text-white font-bold tracking-wide rounded-t">
                     Add new Question
                 </div>

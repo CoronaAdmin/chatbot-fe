@@ -66,7 +66,7 @@ function App() {
     // This can be kept within AppRouter as well incase navbar needs
     // to be kept on UI
     if (user !== null && (!currentUser || currentUser.isFetching)) {
-        return <FullLoading />;
+        return <FullLoading msg={"Loading...."} />;
     }
 
     if (currentUser && currentUser.data) {
