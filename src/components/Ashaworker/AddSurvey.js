@@ -8,18 +8,26 @@ export default function AddSurvey({ Shown, toggle }) {
     }
     const [Input, setInput] = useState("");
     const dispatch = useDispatch();
+    const empty = (input) => {
+        if (typeof input === "undefined" || input === null) return true;
 
+        return input.replace(/\s/g, "").length < 1;
+    };
     const handleSubmit = () => {
         const form = {
             name: Input,
         };
-        dispatch(AddnewSurvey(form)).then((res) => {
-            if (res.status === 201) {
-                Notficiation.Success({ msg: "Survey Created" });
-            }
-            setInput("");
-            back();
-        });
+        if (empty(Input) === false) {
+            dispatch(AddnewSurvey(form)).then((res) => {
+                if (res.status === 201) {
+                    Notficiation.Success({ msg: "Survey Created" });
+                }
+                setInput("");
+                back();
+            });
+        } else {
+            Notficiation.Error({ msg: "Empty Input" });
+        }
     };
     return (
         <div

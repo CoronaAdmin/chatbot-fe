@@ -22,18 +22,18 @@ const AshaworkerRouter = () => {
 
     return (
         <>
-        <div className="min-h-screen">
-            <AshaworkerNavbar />
-            {pages}
-            {/* {!pages ? (
+            <div className="min-h-screen">
+                <AshaworkerNavbar />
+                {pages}
+                {/* {!pages ? (
                 <div className="h-screen flex justify-center py-16">
                     Error 404: Page not found
                 </div>
             ) : (
                     <AshaworkerNavbar pages={pages} menus={links} />
                 )} */}
-        </div>
-        <Footer />
+            </div>
+            <Footer />
         </>
     );
 };
