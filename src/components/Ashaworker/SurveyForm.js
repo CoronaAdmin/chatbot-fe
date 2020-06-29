@@ -18,11 +18,13 @@ function SurveyForm({ id }) {
     const [Loading, setLoading] = useState(false);
     const [Delsurvey, setDelsurvey] = useState(false);
     const [Sure, toggleSure] = useState(false);
+    const [Rerender, setRerender] = useState(Math.random());
 
     const [DelQuestion, setDelQuestion] = useState(false);
     const [ShowQuesdelete, setShowQuesdelete] = useState(false);
 
     useEffect(() => {
+        console.log("render");
         window.scrollTo(0, 0);
         dispatch(fetchQuestions(id)).then((res) => {
             if (res !== undefined) {
@@ -32,7 +34,7 @@ function SurveyForm({ id }) {
                 setLoading(false);
             }
         });
-    }, [dispatch, ShowQuesdelete, shown, id]);
+    }, [dispatch, Rerender, shown, id]);
     const empty = (input) => {
         if (typeof input === "undefined" || input === null) return true;
 
@@ -91,6 +93,7 @@ function SurveyForm({ id }) {
         setLoading(true);
         dispatch(removeQuestion(delQues)).then((res) => {
             if (res.status === 200) {
+                setRerender(Math.random());
                 Notify.Success({ msg: "Question Deleted" });
             }
         });
