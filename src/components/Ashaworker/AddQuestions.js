@@ -45,7 +45,7 @@ export default function AddQuestions({ Shown, toggle, id }) {
             <div
                 className={` ${
                     Loading ? "hidden" : "block"
-                } pb-8 px-0 md:w-1/2 lg:w-1/2 bg-white  shadow-lg mx-5 rounded`}>
+                } pb-8 px-0 md:w-1/2 lg:w-1/3 bg-white  shadow-lg mx-5 rounded`}>
                 <div className="uppercase bg-red-700 pt-3 px-5 pb-2 text-lg text-white font-bold tracking-wide rounded-t">
                     Add new Question
                 </div>

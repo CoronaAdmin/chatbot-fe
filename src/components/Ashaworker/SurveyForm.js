@@ -19,7 +19,7 @@ function SurveyForm({ id }) {
     const [Delsurvey, setDelsurvey] = useState(false);
     const [Sure, toggleSure] = useState(false);
     const [Rerender, setRerender] = useState(Math.random());
-
+    const [SubmitLoading, setSubmitLoading] = useState(false);
     const [DelQuestion, setDelQuestion] = useState(false);
     const [ShowQuesdelete, setShowQuesdelete] = useState(false);
 
@@ -41,6 +41,7 @@ function SurveyForm({ id }) {
     };
     const [Form, setForm] = useState({});
     const handleSubmit = (e) => {
+        setSubmitLoading(true);
         e.preventDefault();
         const result = {
             response: Form,
@@ -50,11 +51,14 @@ function SurveyForm({ id }) {
             dispatch(postSurvey(Userid, result)).then((res) => {
                 if (res.status === 201) {
                     Notify.Success({ msg: "Submitted" });
-                    window.location.reload(false);
+                    setTimeout(function () {
+                        window.location.reload(false);
+                    }, 2000);
                 }
             });
         } else {
             Notify.Error({ msg: "Error in UserID" });
+            setSubmitLoading(false);
             setIderr(true);
         }
     };
@@ -107,6 +111,9 @@ function SurveyForm({ id }) {
 
         setForm(fieldValue);
     };
+    if (SubmitLoading) {
+        return <FullLoading msg={"Submitting Answers...."} />;
+    }
     if (Questions.length === undefined || Loading === true) {
         return <FullLoading msg={"Loading Questions...."} />;
     } else if (Questions.length === 0) {
