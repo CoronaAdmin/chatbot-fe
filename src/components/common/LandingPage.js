@@ -43,7 +43,7 @@ export default function LandingPage() {
     return (
         <div className="flex flex-col items-center mt-40 mb-40">
             <GoogleLogin
-                clientId="768047427466-gutq6h5b3jbf8qkaccp09u3msdl52cus.apps.googleusercontent.com"
+                clientId = process.env.client_Id
                 buttonText="Sign In "
                 onSuccess={responseGoogle}
                 onFailure={fresponseGoogle}
