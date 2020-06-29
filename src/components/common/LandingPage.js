@@ -8,9 +8,9 @@ export default function LandingPage() {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
-
-    document.getElementById("googleButton");
     const ClientId = process.env.client_Id;
+    document.getElementById("googleButton");
+    
     const dispatch = useDispatch();
     const responseGoogle = (response) => {
         const body = {
