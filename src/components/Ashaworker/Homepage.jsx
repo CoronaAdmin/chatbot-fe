@@ -39,8 +39,7 @@ export default function Homepage() {
                             <button
                                 className="bg-red-600 font-semibold  text-white my-4 w-md mx-1 px-3 lg:mx-3 py-2 lg:text-lg text-center rounded text-md "
                                 onClick={addsurvey}>
-                                <span className="lg:text-3xl text-2xl">+</span>
-                                New
+                                Add New
                             </button>
                             {Res.map((value, index) => {
                                 return (
