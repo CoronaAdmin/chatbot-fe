@@ -24,7 +24,6 @@ function SurveyForm({ id }) {
     const [ShowQuesdelete, setShowQuesdelete] = useState(false);
 
     useEffect(() => {
-        console.log("render");
         window.scrollTo(0, 0);
         dispatch(fetchQuestions(id)).then((res) => {
             if (res !== undefined) {
@@ -88,7 +87,6 @@ function SurveyForm({ id }) {
     }
 
     if (DelQuestion === true) {
-        console.log(delQues);
         setDelQuestion(false);
         setLoading(true);
         dispatch(removeQuestion(delQues)).then((res) => {
@@ -139,9 +137,9 @@ function SurveyForm({ id }) {
                     </div>
                     <div className="w-1/2">
                         <button
-                            class="bg-white text-gray-800 ml-3 text-sm font-bold rounded border-2 border-red-500 hover:border-red-600 hover:bg-red-500 hover:text-white shadow-md py-1 lg:py-2 lg:px-3 px-2 inline-flex items-center"
+                            className="bg-white text-gray-800 ml-3 text-sm font-bold rounded border-2 border-red-500 hover:border-red-600 hover:bg-red-500 hover:text-white shadow-md py-1 lg:py-2 lg:px-3 px-2 inline-flex items-center"
                             onClick={deleteSurvey}>
-                            <span class="mr-2">Delete</span>
+                            <span className="mr-2">Delete</span>
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="24"
@@ -224,11 +222,11 @@ function SurveyForm({ id }) {
                                 </button>
                             </div>
                             <div className=" ">
-                                <div class="">
+                                <div className="">
                                     <button
-                                        class="bg-white text-gray-800 text-sm font-bold rounded border-2 border-red-500 hover:border-red-600 hover:bg-red-500 hover:text-white shadow-md py-1 lg:py-2 lg:px-3 px-2 inline-flex items-center"
+                                        className="bg-white text-gray-800 text-sm font-bold rounded border-2 border-red-500 hover:border-red-600 hover:bg-red-500 hover:text-white shadow-md py-1 lg:py-2 lg:px-3 px-2 inline-flex items-center"
                                         onClick={deleteSurvey}>
-                                        <span class="mr-1">Delete</span>
+                                        <span className="mr-1">Delete</span>
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
                                             width="24"
