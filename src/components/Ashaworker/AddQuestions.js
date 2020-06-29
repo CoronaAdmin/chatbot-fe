@@ -34,7 +34,6 @@ export default function AddQuestions({ Shown, toggle, id }) {
             Notficiation.Error({ msg: "Empty Input" });
         }
     };
-    console.log(Loading);
 
     return (
         <div
