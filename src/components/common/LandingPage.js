@@ -10,6 +10,7 @@ export default function LandingPage() {
     }, []);
 
     document.getElementById("googleButton");
+    const ClientId = process.env.client_Id
     const dispatch = useDispatch();
     const responseGoogle = (response) => {
         const body = {
@@ -43,7 +44,7 @@ export default function LandingPage() {
     return (
         <div className="flex flex-col items-center mt-40 mb-40">
             <GoogleLogin
-                clientId = process.env.client_Id
+                clientId = ClientId
                 buttonText="Sign In "
                 onSuccess={responseGoogle}
                 onFailure={fresponseGoogle}
