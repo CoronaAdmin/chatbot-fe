@@ -8,7 +8,7 @@ export default function LandingPage() {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
-    const ClientId = process.env.client_Id;
+    
     document.getElementById("googleButton");
     
     const dispatch = useDispatch();
@@ -44,7 +44,7 @@ export default function LandingPage() {
     return (
         <div className="flex flex-col items-center mt-40 mb-40">
             <GoogleLogin
-                clientId = "7466-gutq6h5b3jbf8qkaccp09u3msdl52cus.apps.googleusercontent.com"
+                clientId = {process.env.client_Id}
                 buttonText="Sign In "
                 onSuccess={responseGoogle}
                 onFailure={fresponseGoogle}
