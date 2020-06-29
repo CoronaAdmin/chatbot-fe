@@ -32,6 +32,7 @@ export default function AddSurvey({ Shown, toggle }) {
             });
         } else {
             Notficiation.Error({ msg: "Empty Input" });
+            setloading(false);
         }
     };
     return (
@@ -39,7 +40,7 @@ export default function AddSurvey({ Shown, toggle }) {
             className={`${
                 !Shown ? "flex" : "hidden"
             } fixed top-0 left-0 bg-red-100 h-screen w-full items-center justify-center z-10`}>
-            {loading && <FullLoading msg={"Added new Survey...."} />}
+            {loading && <FullLoading msg={"Adding new Survey...."} />}
             <div
                 className={`${
                     loading ? "hidden" : "block"
