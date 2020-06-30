@@ -27,7 +27,7 @@
     "scripts": {
         "build:css": "postcss src/tailwind.css -o src/index.css",
         "watch:css": "postcss src/tailwind.css -o src/index.css -w",
-        "start": "concurrently --kill-others \"npm run watch:css\" \"set PORT=8887 && react-scripts start\"",
+        "start": "concurrently --kill-others \"npm run watch:css\" \"react-scripts start\"",
         "build": "npm run build:css && react-scripts build",
         "test": "react-scripts test --env=jsdom",
         "pretty": "prettier --write .",
