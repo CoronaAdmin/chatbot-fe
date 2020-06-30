@@ -51,7 +51,7 @@ export default function Homepage() {
     return (
         <div className="flex flex-col items-center px-3 ">
             <div className="main-card w-full md:w-1/2 lg:w-2/5">
-                <div className="main-title py-4 px-4 bg-red-500 text-sm lg:text-lg font-bold">
+                <div className="main-title py-4 px-4 bg-indigo-500 text-sm lg:text-lg font-bold">
                     <span>Covid Chatbot</span>
                 </div>
                 <div className="chat-area" id="message-box"></div>
@@ -72,7 +72,7 @@ export default function Homepage() {
                         }}
                     />
                     <button
-                        className="input-send bg-red-600 mr-2 items-center text-center"
+                        className="input-send bg-indigo-600 mr-2 items-center text-center"
                         onClick={send}>
                         <svg className="w-24 ml-3 h-24">
                             <path d="M2,21L23,12L2,3V10L17,12L2,14V21Z" />

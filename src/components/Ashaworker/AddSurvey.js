@@ -39,13 +39,13 @@ export default function AddSurvey({ Shown, toggle }) {
         <div
             className={`${
                 !Shown ? "flex" : "hidden"
-            } fixed top-0 left-0 bg-red-100 h-screen w-full items-center justify-center z-10`}>
+            } fixed top-0 left-0 bg-indigo-100 h-screen w-full items-center justify-center z-10`}>
             {loading && <FullLoading msg={"Adding new Survey...."} />}
             <div
                 className={`${
                     loading ? "hidden" : "block"
                 } pb-8 px-0 md:w-1/2 lg:w-1/3 bg-white shadow-lg mx-5 rounded `}>
-                <div className="uppercase bg-red-700 pt-3 px-5 pb-2 text-lg text-white font-bold tracking-wide rounded-t">
+                <div className="uppercase bg-indigo-700 pt-3 px-5 pb-2 text-lg text-white font-bold tracking-wide rounded-t">
                     Enter Name of Survey
                 </div>
                 <div className="px-5">
@@ -55,7 +55,12 @@ export default function AddSurvey({ Shown, toggle }) {
                             onChange={(e) => {
                                 setInput(e.target.value);
                             }}
-                            value={Input}></input>
+                            value={Input}
+                            onKeyPress={(e) => {
+                                if (13 === (e.keyCode || e.which)) {
+                                    handleSubmit();
+                                }
+                            }}></input>
                     </div>
                     <div className="flex justify-between font-bold tracking-wide">
                         <div className="flex">
@@ -68,7 +73,7 @@ export default function AddSurvey({ Shown, toggle }) {
                         <div className="flex text-white">
                             <div
                                 onClick={handleSubmit}
-                                className="flex items-center justify-center rounded p-2 px-3 md:px-6 bg-red-700 hover:bg-red-800 cursor-pointer">
+                                className="flex items-center justify-center rounded p-2 px-3 md:px-6 bg-indigo-700 hover:bg-indigo-800 cursor-pointer">
                                 Submit
                             </div>
                         </div>
