@@ -7,6 +7,13 @@ export default function Homepage() {
     const dispatch = useDispatch();
     var running = false;
     const NewMsg = useRef();
+    const Speech = (say) => {
+        if ("speechSynthesis" in window) {
+            var utterance = new SpeechSynthesisUtterance(say);
+            utterance.pitch = 1.5;
+            speechSynthesis.speak(utterance);
+        }
+    };
     const addResponseMsg = (msg) => {
         var div = document.createElement("div");
         div.innerHTML = "<div class='chat-message'>" + msg + "</div>";
@@ -15,6 +22,7 @@ export default function Homepage() {
         running = false;
         const msgbox = document.getElementById("message-box");
         msgbox.scrollTop = msgbox.scrollHeight;
+        Speech(msg);
     };
 
     useEffect(() => {
