@@ -27,6 +27,10 @@ body {
 /**
  * Render the `main` element consistently in IE.
  */
+.ui-pnotify-container {
+  width: 250px !important;
+}
+
 
 main {
   display: block;
