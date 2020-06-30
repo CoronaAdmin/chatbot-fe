@@ -13,6 +13,7 @@ export default function LandingPage() {
     
     const dispatch = useDispatch();
     const responseGoogle = (response) => {
+        const name = response.profileObj.name
         const body = {
             email: response.profileObj.email,
         };
@@ -27,6 +28,7 @@ export default function LandingPage() {
                         "login_access_token",
                         res.access_token
                     );
+                    localStorage.setItem("name",name)
                     dispatch(getCurrentUser());
                 }
             })
