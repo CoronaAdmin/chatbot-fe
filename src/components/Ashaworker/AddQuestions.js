@@ -31,6 +31,7 @@ export default function AddQuestions({ Shown, toggle, id }) {
                 setLoading(false);
             });
         } else {
+            setLoading(false);
             Notficiation.Error({ msg: "Empty Input" });
         }
     };
