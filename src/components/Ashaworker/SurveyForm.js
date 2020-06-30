@@ -257,7 +257,7 @@ function SurveyForm({ id }) {
                             <input
                                 className={`${
                                     Iderr ? "border border-red-500" : ""
-                                } w-full focus:shadow-outline px-5 py-1 text-gray-700 bg-gray-200 rounded`}
+                                } w-5/6 focus:shadow-outline px-5 py-1 text-gray-700 bg-gray-200 rounded`}
                                 name="userid"
                                 onChange={(e) => {
                                     setUserid(e.target.value);
@@ -304,7 +304,7 @@ function SurveyForm({ id }) {
                             );
                         })}
                         <button
-                            className="bg-red-500    hover:bg-red-400 m-0 text-white font-bold py-2 px-4 border-b-4 border-red-700 hover:border-red-500 rounded"
+                            className="bg-red-500  mt-2  hover:bg-red-400 m-0 text-white font-bold py-2 px-4 border-b-4 border-red-700 hover:border-red-500 rounded"
                             onClick={handleSubmit}>
                             {" "}
                             Submit
