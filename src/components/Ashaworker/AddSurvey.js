@@ -23,8 +23,10 @@ export default function AddSurvey({ Shown, toggle }) {
         };
         if (empty(Input) === false) {
             dispatch(AddnewSurvey(form)).then((res) => {
-                if (res.status === 201) {
-                    Notficiation.Success({ msg: "Survey Created" });
+                if (res !== undefined) {
+                    if (res.status === 201) {
+                        Notficiation.Success({ msg: "Survey Created" });
+                    }
                 }
                 setInput("");
                 setloading(false);

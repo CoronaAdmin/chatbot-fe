@@ -24,8 +24,10 @@ export default function AddQuestions({ Shown, toggle, id }) {
         };
         if (empty(Input) === false) {
             dispatch(postQuestions(id, form)).then((res) => {
-                if (res.status === 201) {
-                    Notficiation.Success({ msg: "Question Added" });
+                if (res !== undefined) {
+                    if (res.status === 201) {
+                        Notficiation.Success({ msg: "Question Added" });
+                    }
                 }
                 setInput("");
                 setLoading(false);
