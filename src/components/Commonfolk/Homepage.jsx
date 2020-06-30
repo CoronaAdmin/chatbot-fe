@@ -82,7 +82,7 @@ export default function Homepage() {
                     <button
                         className="input-send bg-indigo-600 mr-2 items-center text-center"
                         onClick={send}>
-                        <svg className="w-24 ml-3 h-24">
+                        <svg className="ml-3 h-6 w-6">
                             <path d="M2,21L23,12L2,3V10L17,12L2,14V21Z" />
                         </svg>
                     </button>
