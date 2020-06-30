@@ -44,4 +44,9 @@ export default {
         method: "DELETE",
         noAuth: false,
     },
+    sendMessage: {
+        path: "/chatbot/send-msg",
+        method: "POST",
+        noAuth: false,
+    },
 };
