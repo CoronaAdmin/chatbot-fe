@@ -49,11 +49,13 @@ function SurveyForm({ id }) {
 
         if (isNaN(Userid) === false && empty(Userid) === false) {
             dispatch(postSurvey(Userid, result)).then((res) => {
-                if (res.status === 201) {
-                    Notify.Success({ msg: "Submitted" });
-                    setTimeout(function () {
-                        window.location.reload(false);
-                    }, 2000);
+                if (res !== undefined) {
+                    if (res.status === 201) {
+                        Notify.Success({ msg: "Submitted" });
+                        setTimeout(function () {
+                            window.location.reload(false);
+                        }, 2000);
+                    }
                 }
             });
         } else {
@@ -83,10 +85,11 @@ function SurveyForm({ id }) {
         toggleSure(false);
         setLoading(true);
         dispatch(removeSurvey(id)).then((res) => {
-            if (res.status === 200) {
-                Notify.Success({ msg: "Survey Deleted" });
-                navigate("/");
-            }
+            if (res !== undefined)
+                if (res.status === 200) {
+                    Notify.Success({ msg: "Survey Deleted" });
+                    navigate("/");
+                }
         });
     }
 

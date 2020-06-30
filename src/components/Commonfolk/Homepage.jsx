@@ -50,8 +50,10 @@ export default function Homepage() {
         const msgbox = document.getElementById("message-box");
         msgbox.scrollTop = msgbox.scrollHeight;
         dispatch(sendMessage({ message: msg })).then((res) => {
-            if (res.status === 201) {
-                window.setTimeout(addResponseMsg, 1000, res.data.response);
+            if (res !== undefined) {
+                if (res.status === 201) {
+                    window.setTimeout(addResponseMsg, 1000, res.data.response);
+                }
             }
         });
     };
