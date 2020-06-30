@@ -12,12 +12,12 @@ const PublicRouter = () => {
     !pages && navigate("/");
     return (
         <>
-            <div className="relative bg-white min-h-screen pb-24">
+            <div className="relative bg-indigo-100 min-h-screen">
                 {/* public navbar can go here */}
                 <PublicNavBar />
                 {pages}
                 {!pages && (
-                    <div className="flex justify-center py-16">
+                    <div className="flex justify-center">
                         Error 404: Page not found
                     </div>
                 )}
