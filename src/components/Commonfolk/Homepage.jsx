@@ -58,7 +58,7 @@ export default function Homepage() {
 
     return (
         <div className="flex flex-col items-center px-3">
-            <div className="main-card mt-24 mb-24 w-full md:w-1/2 lg:w-2/5">
+            <div className="main-card mt-16 w-full md:w-1/2 lg:w-2/5">
                 <div className="main-title py-4 px-4 bg-indigo-500 text-sm lg:text-lg font-bold">
                     <span>Covid Chatbot</span>
                 </div>
