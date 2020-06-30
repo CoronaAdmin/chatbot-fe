@@ -124,12 +124,12 @@ function SurveyForm({ id }) {
                         className={`${
                             shown ? "hidden" : "block"
                         }max-w-xl w-1/2  m-0 m-auto  text-right rounded`}>
-                        <span className="text-red-600 text-lg font-semibold">
+                        <span className="text-indigo-600 text-lg font-semibold">
                             No Questions Found{"  "}
                         </span>
                         <button
                             onClick={toggle}
-                            className="p-0 w-12 h-12 bg-red-600 rounded-full hover:bg-red-700 active:shadow-lg mouse shadow transition ease-in duration-200 focus:outline-none">
+                            className="p-0 w-12 h-12 bg-indigo-600 rounded-full hover:bg-indigo-700 active:shadow-lg mouse shadow transition ease-in duration-200 focus:outline-none">
                             <svg
                                 viewBox="0 0 20 20"
                                 className="w-6 h-6 inline-block">
@@ -215,7 +215,7 @@ function SurveyForm({ id }) {
                                 </span>
                                 <button
                                     onClick={toggle}
-                                    className="p-0 ml-2 w-10 right-0 h-10 bg-red-600 rounded-full hover:bg-red-700 active:shadow-lg mouse shadow transition ease-in duration-200 focus:outline-none">
+                                    className="p-0 ml-2 w-10 right-0 h-10 bg-indigo-600 rounded-full hover:bg-indigo-700 active:shadow-lg mouse shadow transition ease-in duration-200 focus:outline-none">
                                     <svg
                                         viewBox="0 0 20 20"
                                         className="w-6 h-6 inline-block">
@@ -256,7 +256,7 @@ function SurveyForm({ id }) {
                             </label>
                             <input
                                 className={`${
-                                    Iderr ? "border border-red-500" : ""
+                                    Iderr ? "border border-indigo-500" : ""
                                 } w-5/6 focus:shadow-outline px-5 py-1 text-gray-700 bg-gray-200 rounded`}
                                 name="userid"
                                 onChange={(e) => {
@@ -267,7 +267,7 @@ function SurveyForm({ id }) {
                                 value={Userid}
                                 placeholder="Your Answer"
                             />
-                            <div className="text-xs italic text-red-500"></div>
+                            <div className="text-xs italic text-indigo-500"></div>
                         </div>
                         {Questions.map((value, index) => {
                             return (
@@ -299,12 +299,12 @@ function SurveyForm({ id }) {
                                             </button>
                                         </div>
                                     </div>
-                                    <div className="text-xs italic text-red-500"></div>
+                                    <div className="text-xs italic text-indigo-500"></div>
                                 </div>
                             );
                         })}
                         <button
-                            className="bg-red-500  mt-2  hover:bg-red-400 m-0 text-white font-bold py-2 px-4 border-b-4 border-red-700 hover:border-red-500 rounded"
+                            className="bg-indigo-500  mt-2  hover:bg-indigo-400 m-0 text-white font-bold py-2 px-4 border-b-4 border-indigo-700 hover:border-indigo-500 rounded"
                             onClick={handleSubmit}>
                             {" "}
                             Submit

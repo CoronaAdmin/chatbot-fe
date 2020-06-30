@@ -34,17 +34,17 @@ export default function Homepage() {
         return (
             <div>
                 <div className={` my-20 ${!shown ? "block" : "hidden"}`}>
-                    <div className="flex bg-red-200 rounded px-2 py-3 flex-col mt-20 mb-20 sm:w-full rounded  lg:w-1/2 md:w-3/4  m-0 m-auto mt-10 ">
+                    <div className="flex bg-indigo-200 rounded px-2 py-3 flex-col mt-20 mb-20 sm:w-full rounded  lg:w-1/2 md:w-3/4  m-0 m-auto mt-10 ">
                         <div className={`grid grid-cols-${colno}`}>
                             <button
-                                className="bg-red-600 font-semibold  text-white my-4 w-md mx-1 px-3 lg:mx-3 py-2 lg:text-lg text-center rounded text-md "
+                                className="bg-indigo-600 font-semibold  text-white my-4 w-md mx-1 px-3 lg:mx-3 py-2 lg:text-lg text-center rounded text-md "
                                 onClick={addsurvey}>
-                                Add New
+                                ADD NEW
                             </button>
                             {Res.map((value, index) => {
                                 return (
                                     <A
-                                        className="bg-red-500 hover:bg-red-600 hover:shadow-md font-semibold justify-center text-white my-4 w-md mx-1 px-3 lg:mx-3 py-2 lg:text-lg text-center rounded text-sm lg:text-lg"
+                                        className="bg-indigo-500 hover:bg-indigo-600 hover:shadow-md font-semibold justify-center text-white my-4 w-md mx-1 px-3 lg:mx-3 py-2 lg:text-lg text-center rounded text-sm lg:text-lg"
                                         href={`/ashaworker/form/${value.id}`}
                                         key={index}>
                                         {value.name}
