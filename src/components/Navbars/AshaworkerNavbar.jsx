@@ -4,7 +4,7 @@ export default function AshaworkerNavBar() {
     const logout = () => {
         localStorage.removeItem("login_access_token");
         localStorage.removeItem("login_refresh_token");
-        localStorage.removeItem("name")
+        localStorage.removeItem("name");
         navigate("/");
         window.location.reload();
     };
@@ -13,7 +13,7 @@ export default function AshaworkerNavBar() {
             <A href="/" className="w-2/3">
                 <div className="flex items-center text-white mr-6 py-6 pl-6">
                     <span className="font-semibold text-md lg:text-xl md:text-xl ml-1 tracking-tight">
-                        Welcome {localStorage.getItem('name')}
+                        Welcome {localStorage.getItem("name")}
                     </span>
                 </div>
             </A>

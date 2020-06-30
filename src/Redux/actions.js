@@ -27,3 +27,6 @@ export const removeSurvey = (id) => {
 export const removeQuestion = (id) => {
     return fireRequest("deleteQuestions", [id]);
 };
+export const sendMessage = (body) => {
+    return fireRequest("sendMessage", [], body);
+};
