@@ -22,6 +22,7 @@ function SurveyForm({ id }) {
     const [SubmitLoading, setSubmitLoading] = useState(false);
     const [DelQuestion, setDelQuestion] = useState(false);
     const [ShowQuesdelete, setShowQuesdelete] = useState(false);
+    const [SurveyName, setSurveyName] = useState("");
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -29,6 +30,7 @@ function SurveyForm({ id }) {
             if (res !== undefined) {
                 if (res.status === 200) {
                     setQuestions(res.data.questions);
+                    setSurveyName(res.data.survey[0].name);
                 }
                 setLoading(false);
             }
@@ -122,6 +124,9 @@ function SurveyForm({ id }) {
     } else if (Questions.length === 0) {
         return (
             <div>
+                <div className="m-0 text-black text-lg lg:text-2xl my-3 font-bold text-center m-auto">
+                    {SurveyName}
+                </div>
                 <div className="flex mt-10 flex-row">
                     <div
                         className={`${
@@ -208,7 +213,7 @@ function SurveyForm({ id }) {
                         shown ? "hidden" : "block"
                     } my-5 m-0  m-auto`}>
                     <div className="m-0 text-black text-lg lg:text-2xl my-3 font-bold text-center m-auto">
-                        Survey about {id}
+                        {SurveyName}
                     </div>
                     <div className="max-w-xl  m-0 m-auto p-10 bg-white rounded shadow-xl">
                         <div className="flex flex-row">
