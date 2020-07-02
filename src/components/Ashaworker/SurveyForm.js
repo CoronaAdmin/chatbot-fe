@@ -258,9 +258,9 @@ function SurveyForm({ id }) {
                         </div>
                         <div className="mt-2 mb-2">
                             <label
-                                className="block text-md lg:text-lg text-black "
+                                className="block text-md text-black "
                                 htmlFor="name">
-                                Enter your user id
+                                1. Enter your user id
                             </label>
                             <input
                                 className={`${
@@ -279,11 +279,11 @@ function SurveyForm({ id }) {
                         </div>
                         {Questions.map((value, index) => {
                             return (
-                                <div className="mt-2 mb-2" key={index}>
+                                <div className="mt-3 mb-2" key={index}>
                                     <label
-                                        className="block text-md lg:text-lg text-black "
+                                        className="block w-5/6 text-justify text-md text-black "
                                         htmlFor="name">
-                                        {value.ques}
+                                        {index + 2}. {value.ques}
                                     </label>
                                     <div className="flex flex-row">
                                         <input

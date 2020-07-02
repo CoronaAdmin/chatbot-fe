@@ -10,14 +10,14 @@ export default function Homepage() {
     const Speech = (say) => {
         if ("speechSynthesis" in window) {
             speechSynthesis.cancel();
-            var utterance = new SpeechSynthesisUtterance(say);
+            const utterance = new SpeechSynthesisUtterance(say);
             utterance.pitch = 1.5;
             speechSynthesis.speak(utterance);
         }
     };
     const addResponseMsg = (msg) => {
         if (msg === "") {
-            msg = "Please ask that again !";
+            msg = "I didn't get that phrase !";
         }
         var div = document.createElement("div");
         div.innerHTML = "<div class='chat-message'>" + msg + "</div>";
