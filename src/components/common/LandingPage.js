@@ -46,7 +46,7 @@ export default function LandingPage() {
     return (
         <div className="flex flex-col items-center mt-40 mb-40">
             <div className="mb-10">
-                <h2 class="font-bold mb-2 text-indigo-500 sm:text-2xl md:text-2xl lg:text-2xl">
+                <h2 className="font-bold mb-2 text-indigo-500 sm:text-2xl md:text-2xl lg:text-2xl">
                     Welcome To Covid-19 Smart Surveys
                 </h2>
             </div>

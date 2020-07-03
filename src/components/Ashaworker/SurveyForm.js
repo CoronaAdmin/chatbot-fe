@@ -264,7 +264,7 @@ function SurveyForm({ id }) {
                             </label>
                             <input
                                 className={`${
-                                    Iderr ? "border border-indigo-500" : ""
+                                    Iderr ? "border border-red-500" : ""
                                 } w-5/6 focus:shadow-outline px-5 py-1 text-gray-700 bg-gray-200 rounded`}
                                 name="userid"
                                 onChange={(e) => {
