@@ -18,7 +18,7 @@ export default function CommonfolkNavBar() {
                         Welcome {localStorage.getItem("name")}
                     </span>
                 </A>
-            </div>m
+            </div>
             <button
                 className="flex items-center text-sm md:text-lg lg:text-lg border-4 hover:border-4 hover:border-white  text-indigo-500 hover:text-white hover:bg-indigo-500 mr-6 py-2 px-1  font-semibold text-md justify-center md:px-6 rounded bg-white cursor-pointer"
                 onClick={logout}>
