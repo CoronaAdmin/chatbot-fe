@@ -44,7 +44,7 @@ export default function Homepage() {
                             {Res.map((value, index) => {
                                 return (
                                     <A
-                                        className="bg-indigo-500 hover:bg-indigo-600 hover:shadow-md font-semibold justify-center text-white my-4 w-md mx-1 px-3 lg:mx-3 py-2 lg:text-lg text-center rounded text-sm lg:text-lg"
+                                        className="bg-indigo-500 truncate hover:bg-indigo-600 hover:shadow-md font-semibold justify-center text-white my-4 w-md mx-1 px-3 lg:mx-3 py-2 lg:text-lg text-center rounded text-sm lg:text-lg"
                                         href={`/ashaworker/form/${value.id}`}
                                         key={index}>
                                         {value.name}

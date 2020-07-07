@@ -264,7 +264,7 @@ function SurveyForm({ id }) {
                             </label>
                             <input
                                 className={`${
-                                    Iderr ? "border border-indigo-500" : ""
+                                    Iderr ? "border border-red-500" : ""
                                 } w-5/6 focus:shadow-outline px-5 py-1 text-gray-700 bg-gray-200 rounded`}
                                 name="userid"
                                 onChange={(e) => {
@@ -281,7 +281,7 @@ function SurveyForm({ id }) {
                             return (
                                 <div className="mt-3 mb-2" key={index}>
                                     <label
-                                        className="block w-5/6 text-justify text-md text-black "
+                                        className="block w-5/6 mb-1 text-justify text-md text-black "
                                         htmlFor="name">
                                         {index + 2}. {value.ques}
                                     </label>
