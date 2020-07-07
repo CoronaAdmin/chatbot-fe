@@ -281,7 +281,7 @@ function SurveyForm({ id }) {
                             return (
                                 <div className="mt-3 mb-2" key={index}>
                                     <label
-                                        className="block w-5/6 text-justify text-md text-black "
+                                        className="block w-5/6 mb-1 text-justify text-md text-black "
                                         htmlFor="name">
                                         {index + 2}. {value.ques}
                                     </label>

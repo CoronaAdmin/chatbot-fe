@@ -6,6 +6,7 @@ export const Loading = ({ msg }) => {
             <div className=" text-center ">
                 {/* <img src={img} className="App-logo" alt="logo" /> */}
                 {msg}
+                {msg === undefined && <div>Loading....</div>}
             </div>
         </div>
     );
